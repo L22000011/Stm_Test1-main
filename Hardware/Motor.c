@@ -17,7 +17,7 @@ void Motor_Init(void)
 }
 
 void Motor_SetSpeed(int8_t Speed)
-{
+{   //电机速度及方向
     if (Speed > 0)
     {
         GPIO_SetBits(GPIOA, GPIO_Pin_4);// 设置电机正转方向引脚为高电平
