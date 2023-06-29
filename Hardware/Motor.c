@@ -20,20 +20,20 @@ void Motor_SetSpeed(int8_t Speed)
 {
     if (Speed > 0)
     {
-        GPIO_SetBits(GPIOA, GPIO_Pin_4);
-        GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+        GPIO_SetBits(GPIOA, GPIO_Pin_4);// 设置电机正转方向引脚为高电平
+        GPIO_ResetBits(GPIOA, GPIO_Pin_5);// 设置电机反转方向引脚为低电平
         PWM_SetCompare3(Speed);
     }
     else if (Speed < 0)
     {
-        GPIO_ResetBits(GPIOA, GPIO_Pin_4);
-        GPIO_SetBits(GPIOA, GPIO_Pin_5);
+        GPIO_ResetBits(GPIOA, GPIO_Pin_4); // 设置电机正转方向引脚为低电平
+        GPIO_SetBits(GPIOA, GPIO_Pin_5);// 设置电机反转方向引脚为高电平
         PWM_SetCompare3(-Speed);
     }
     else
     {
-        GPIO_ResetBits(GPIOA, GPIO_Pin_4);
-        GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+        GPIO_ResetBits(GPIOA, GPIO_Pin_4);// 设置电机正转方向引脚为低电平
+        GPIO_ResetBits(GPIOA, GPIO_Pin_5); // 设置电机反转方向引脚为低电平
         PWM_SetCompare3(0);
     }
 }
