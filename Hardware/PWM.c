@@ -14,7 +14,7 @@ void PWM_Init_DJ(void)
 	
 	TIM_InternalClockConfig(TIM3);
 	
-	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;  ////电机PWM驱动
 	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
 	TIM_TimeBaseInitStructure.TIM_Period = 100 - 1;		//ARR
